@@ -1,37 +1,38 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ home, experience, projects, setActive }) => {
   return (
     <header className='nav-header'>
-      <h3 className='nav-logo'>Keep It Simple</h3>
+      <h3 className='nav-logo'>Data Learner</h3>
       <nav className='nav-items'>
-        <button
+        <Link
+          to='/'
           className={`${home ? 'nav-link active' : 'nav-link'}`}
-          href='#'
           onClick={() => {
             setActive(true, false, false);
           }}
         >
           Home
-        </button>
-        <button
+        </Link>
+        <Link
+          to='/experience'
           className={`${experience ? 'nav-link active' : 'nav-link'}`}
-          href='#'
           onClick={() => {
             setActive(false, true, false);
           }}
         >
           Experience
-        </button>
-        <button
+        </Link>
+        <Link
+          to='/projects'
           className={`${projects ? 'nav-link active' : 'nav-link'}`}
-          href='#'
           onClick={() => {
             setActive(false, false, true);
           }}
         >
           Projects
-        </button>
+        </Link>
       </nav>
     </header>
   );

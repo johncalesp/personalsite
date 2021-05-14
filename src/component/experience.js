@@ -6,22 +6,22 @@ const Experience = () => {
     <div className='main-experience'>
       <h2 className='experience-title'>My IT road so far</h2>
       <div className='main-timeline'>
-        {experience_data.map((item) => {
+        {experience_data.map((item, index) => {
           const { title, description, start_year, exp_year } = item;
           return (
-            <div class='timeline'>
-              <div class='icon'></div>
-              <div class='date-content'>
-                <div class='date-outer'>
-                  <span class='date'>
-                    <span class='month'>{exp_year} Years</span>
-                    <span class='year'>{start_year}</span>
+            <div key={index} className='timeline'>
+              <div className='icon'></div>
+              <div className='date-content'>
+                <div className='date-outer'>
+                  <span className='date'>
+                    <span className='month'>{exp_year} Years</span>
+                    <span className='year'>{start_year}</span>
                   </span>
                 </div>
               </div>
-              <div class='timeline-content'>
-                <h5 class='title'>{title}</h5>
-                <p class='description'>{description}</p>
+              <div className='timeline-content'>
+                <h5 className='title'>{title}</h5>
+                <p className='description'>{description}</p>
               </div>
             </div>
           );

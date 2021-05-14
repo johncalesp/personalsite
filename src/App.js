@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './component/navbar';
 import Home from './component/home';
 import Footer from './component/footer';
@@ -17,19 +18,27 @@ const App = () => {
   };
 
   return (
-    <div className='main'>
-      <Navbar
-        home={home}
-        experience={experience}
-        projects={projects}
-        setActive={setActive}
-      />
-      {home && <Home />}
-      {experience && <Experience />}
-      {projects && <Projects />}
+    <Router>
+      <Switch>
+        <>
+          <div className='main'>
+            <Navbar
+              home={home}
+              experience={experience}
+              projects={projects}
+              setActive={setActive}
+            />
+            <Route exact path='/'>
+              {home && <Home />}
+            </Route>
+            <Route path='/experience'>{experience && <Experience />}</Route>
+            <Route path='/projects'>{projects && <Projects />}</Route>
 
-      <Footer />
-    </div>
+            <Footer />
+          </div>
+        </>
+      </Switch>
+    </Router>
   );
 };
 
