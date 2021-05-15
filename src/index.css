@@ -90,10 +90,21 @@ body {
   margin: 10px auto;
   padding: 20px;
   line-height: 30px;
+  animation: fadeIn linear 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .span-bold {
   font-weight: bold;
+  color: #9a9a9a;
 }
 /*
  * EXPERIENCE
@@ -237,6 +248,32 @@ body {
   left: -6px;
 }
 
+.main-timeline .timeline:nth-child(odd) {
+  animation-name: left-to-right;
+  animation-duration: 3s;
+}
+@keyframes left-to-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.main-timeline .timeline:nth-child(even) {
+  animation-name: right-to-left;
+  animation-duration: 3s;
+}
+@keyframes right-to-left {
+  from {
+    transform: translateX(+100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .main-timeline .date {
   width: 100%;
   margin: auto;
@@ -270,6 +307,7 @@ body {
   font-weight: 700;
   line-height: 24px;
   margin: 0 0 15px 0;
+  text-align: center;
 }
 
 .main-timeline .description {
@@ -351,6 +389,34 @@ body {
   border: transparent;
 }
 
+.project-container .project-item:nth-child(odd),
+.demo-container .demo-item:nth-child(odd) {
+  animation-name: left-animation;
+  animation-duration: 2.5s;
+}
+@keyframes left-animation {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.project-container .project-item:nth-child(even),
+.demo-container .demo-item:nth-child(even) {
+  animation-name: right-animation;
+  animation-duration: 2.5s;
+}
+@keyframes right-animation {
+  from {
+    transform: translateX(+100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 /*
  * FOOTER
  */
@@ -373,6 +439,10 @@ body {
 .footer-items li a {
   font-size: 2.5rem;
   color: #fff;
+}
+
+.footer-items li a:hover {
+  color: #9a9a9a;
 }
 
 .underline {

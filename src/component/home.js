@@ -5,8 +5,10 @@ const Home = () => {
     <div className='home-content'>
       <h1 className='home-title'>Welcome</h1>
       <p className='home-text'>
-        Hello there, my name is John Calderon.{' '}
-        <span className='span-bold'>I am a telecommunication engineer </span>
+        Hello there,{' '}
+        <span className='span-bold'>
+          my name is John Calderon. I am a telecommunication engineer{' '}
+        </span>
         currently based on Lima, Perú but in the next few months I will be
         living in Toronto. As a telecommunication engineer, I have had the
         opportunity to work in this field for many years. This has allowed me
