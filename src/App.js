@@ -31,17 +31,33 @@ const App = () => {
       <Switch>
         <>
           <div className='main'>
-            <Navbar
-              home={tokens[0]}
-              experience={tokens[1]}
-              projects={tokens[2]}
-              setActive={setActive}
-            />
             <Route exact path='/'>
-              {tokens[0] && <Home />}
+              <Navbar
+                home={true}
+                experience={false}
+                projects={false}
+                setActive={setActive}
+              />
+              <Home />
             </Route>
-            <Route path='/experience'>{tokens[1] && <Experience />}</Route>
-            <Route path='/projects'>{tokens[2] && <Projects />}</Route>
+            <Route path='/experience'>
+              <Navbar
+                home={false}
+                experience={true}
+                projects={false}
+                setActive={setActive}
+              />
+              <Experience />
+            </Route>
+            <Route path='/projects'>
+              <Navbar
+                home={false}
+                experience={false}
+                projects={true}
+                setActive={setActive}
+              />
+              <Projects />
+            </Route>
 
             <Footer />
           </div>

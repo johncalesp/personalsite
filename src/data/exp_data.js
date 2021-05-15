@@ -12,7 +12,7 @@ const experience_data = [
   {
     title: 'CTO',
     description: [
-      'Managing the engineering team',
+      'Managing the engineering team consisting of 6 persons',
       'Aligning the solution strategy with customer IT infrastructure and requirements',
       'Responsible for leading IT projects and deliver the agreed goals under the time and budget allocated to them',
       'Allocating support tickets to engineers and monitoring their solution under SLA agreements',
@@ -26,8 +26,9 @@ const experience_data = [
     description: [
       'Part of post-sales team involved in the implementation of Switches, Storages, Servers, PBX, WLAN among other IT equipment from Cisco and Huawei',
       'Configuration and management of virtualizations solutions in VMware',
+      'Implementation of monitoring softwares like Solarwinds, Cisco Prime and Huawei eSight',
       'Provide support to marketing and sales teams with the assessment of equipment and elaborating proposals according to customer’s needs',
-      'Deliver customer support solving issues and fulfilling new requests',
+      'Deliver customer support solving tickets and fulfilling new requests',
     ],
     start_year: 2013,
     exp_year: 6,
