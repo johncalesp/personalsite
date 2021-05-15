@@ -37,6 +37,7 @@ body {
  */
 .nav-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 25px 30px;
   padding: 10px;
@@ -46,8 +47,12 @@ body {
   font-size: 2rem;
 }
 
+.nav-items {
+  margin: 1rem;
+}
+
 .nav-link {
-  margin: auto 0.75rem;
+  margin: auto 0.5rem;
   border: none;
   padding: 0;
   color: rgba(255, 255, 255, 0.5);
@@ -72,7 +77,6 @@ body {
  * HOME
  */
 .home-content {
-  max-height: 50vh;
   text-align: center;
 }
 
@@ -81,6 +85,16 @@ body {
   padding: 5px;
 }
 
+.home-content .home-text {
+  text-align: justify;
+  margin: 10px auto;
+  padding: 20px;
+  line-height: 30px;
+}
+
+.span-bold {
+  font-weight: bold;
+}
 /*
  * EXPERIENCE
  */
@@ -260,6 +274,11 @@ body {
 
 .main-timeline .description {
   margin-bottom: 0;
+  text-align: justify;
+}
+
+.main-timeline .bullet-point {
+  margin: 10px auto;
 }
 
 .main-timeline .timeline:nth-child(2n) .date-content {
@@ -283,12 +302,16 @@ body {
   text-align: center;
 }
 
-.projects-title {
-  margin: 2rem auto;
+.projects-title,
+.demos-title {
+  margin: 0.25rem auto;
+  padding: 5px;
 }
 
+.project-title,
 .demo-title {
-  margin: 3rem auto 1rem auto;
+  margin: 0.25rem;
+  padding: 10px;
 }
 
 .project-container,
@@ -305,16 +328,19 @@ body {
 
 .project-description,
 .demo-description {
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 2px;
+  text-align: justify;
 }
 
 .project-link,
 .demo-link {
+  display: block;
+  width: 50%;
   color: #fff;
   text-decoration: none;
   border: 2px solid #9e9d89;
-  margin: 2rem;
+  margin: 1rem auto;
   padding: 5px;
   border-radius: 10px;
 }
@@ -330,7 +356,7 @@ body {
  */
 
 .footer-section {
-  margin-top: 15rem;
+  margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
@@ -347,4 +373,87 @@ body {
 .footer-items li a {
   font-size: 2.5rem;
   color: #fff;
+}
+
+.underline {
+  width: 6rem;
+  height: 0.25rem;
+  background: #9e9d89;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.8rem;
+}
+
+/*
+ * MEDIA QUIERIES TABLETS
+ */
+
+@media (max-width: 1024px) and (min-width: 750px) {
+  .project-item img,
+  .demo-item img {
+    max-width: 100%;
+  }
+
+  .project-title,
+  .demo-title {
+    height: 70px;
+    align-items: center;
+  }
+}
+
+/*
+ * MEDIA QUIERIES SMARTPHONES
+ */
+@media (max-width: 750px) {
+  /*
+ * Navbar
+ */
+  .nav-header {
+    align-items: center;
+    flex-direction: column;
+  }
+  .nav-logo {
+    font-size: 1.75rem;
+    margin: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-items {
+    margin: 0.5rem;
+  }
+
+  /*
+ * Home
+ */
+
+  /*
+ * Experience
+ */
+
+  /*
+ * Projects
+ */
+
+  .project-container,
+  .demo-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .project-container img,
+  .demo-container img {
+    width: 100%;
+  }
+
+  /*
+ * Footer
+ */
+  .footer-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-items li a {
+    font-size: 1.5rem;
+  }
 }

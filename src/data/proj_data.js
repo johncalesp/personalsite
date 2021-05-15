@@ -28,7 +28,7 @@ const project_data = [
     src: '../img/project_cards.jpg',
     title: 'Classification',
     description:
-      'This project is about using a classification model and try to determine if a customer will stop using the services of a bank ',
+      'This project is about using a classification model and try to determine if a customer will stop using the credit card services of a bank',
     link: 'https://www.kaggle.com/johnsnow27/eda-and-classification-model-with-catboost-98',
   },
 ];

@@ -14,14 +14,26 @@ const Experience = () => {
               <div className='date-content'>
                 <div className='date-outer'>
                   <span className='date'>
-                    <span className='month'>{exp_year} Years</span>
+                    <span className='month'>
+                      {exp_year > 1 ? `${exp_year} Years` : `${exp_year} Year`}
+                    </span>
                     <span className='year'>{start_year}</span>
                   </span>
                 </div>
               </div>
               <div className='timeline-content'>
                 <h5 className='title'>{title}</h5>
-                <p className='description'>{description}</p>
+                <div className='description'>
+                  <ul>
+                    {description.map((bullet_point, ind) => {
+                      return (
+                        <li key={ind} className='bullet-point'>
+                          {bullet_point}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
             </div>
           );

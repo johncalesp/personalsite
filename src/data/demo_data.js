@@ -12,7 +12,7 @@ const demo_data = [
     src: '../img/demo_cluster.jpg',
     title: 'Country Clustering',
     description:
-      'This live demo is about the clustering notebook where you can select different inputs in the left column and the algorithm will try to determine to what cluster it belongs',
+      'This live demo is about the clustering notebook where you can select different inputs in the left column and the algorithm will try to determine to what group it belongs',
     link: 'https://cluster-countries.herokuapp.com',
   },
 ];

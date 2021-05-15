@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './component/navbar';
 import Home from './component/home';
@@ -6,16 +6,25 @@ import Footer from './component/footer';
 import Experience from './component/experience';
 import Projects from './component/projects';
 
+const getLocalStorage = () => {
+  let tokens = localStorage.getItem('tokens');
+  if (tokens) {
+    return (tokens = JSON.parse(localStorage.getItem('tokens')));
+  } else {
+    return [true, false, false];
+  }
+};
+
 const App = () => {
-  const [home, setHome] = useState(true);
-  const [experience, setExperience] = useState(false);
-  const [projects, setProjects] = useState(false);
+  const [tokens, setTokens] = useState(getLocalStorage());
 
   const setActive = (tab1, tab2, tab3) => {
-    setHome(tab1);
-    setExperience(tab2);
-    setProjects(tab3);
+    setTokens([tab1, tab2, tab3]);
   };
+
+  useEffect(() => {
+    localStorage.setItem('tokens', JSON.stringify(tokens));
+  }, [tokens]);
 
   return (
     <Router>
@@ -23,16 +32,16 @@ const App = () => {
         <>
           <div className='main'>
             <Navbar
-              home={home}
-              experience={experience}
-              projects={projects}
+              home={tokens[0]}
+              experience={tokens[1]}
+              projects={tokens[2]}
               setActive={setActive}
             />
             <Route exact path='/'>
-              {home && <Home />}
+              {tokens[0] && <Home />}
             </Route>
-            <Route path='/experience'>{experience && <Experience />}</Route>
-            <Route path='/projects'>{projects && <Projects />}</Route>
+            <Route path='/experience'>{tokens[1] && <Experience />}</Route>
+            <Route path='/projects'>{tokens[2] && <Projects />}</Route>
 
             <Footer />
           </div>

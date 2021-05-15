@@ -6,6 +6,7 @@ const Projects = () => {
   return (
     <div className='main-projects'>
       <h2 className='projects-title'>Some of my Projects</h2>
+      <div className='underline'></div>
       <div className='project-container'>
         {project_data.map((project) => {
           const { id, src, title, description, link } = project;
@@ -26,7 +27,8 @@ const Projects = () => {
           );
         })}
       </div>
-      <h2 className='demo-title'>Live Demos</h2>
+      <h2 className='demos-title'>Live Demos</h2>
+      <div className='underline'></div>
       <div className='demo-container'>
         {demo_data.map((demo) => {
           const { id, src, title, description, link } = demo;
