@@ -9,7 +9,7 @@ const Home = () => {
         <span className='span-bold'>
           my name is John Calderon. I am a telecommunication engineer{' '}
         </span>
-        currently based on Toronto, Canada. As a telecommunication engineer, I have had the
+        currently based in Toronto, Canada. As a telecommunication engineer, I have had the
         opportunity to work in this field for many years. This has allowed me
         not only to acquire skills in different technologies, like routers,
         switches, servers and storage systems, but also to be promoted in my job
